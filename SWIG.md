@@ -5,11 +5,7 @@ https://www.swig.org/
 
 SWIG is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages. SWIG is used with different types of target languages including common scripting languages such as Javascript, Perl, PHP, Python, Tcl and Ruby. The list of supported languages also includes non-scripting languages such as C#, D, Go language, Java including Android, Lua, OCaml, Octave, Scilab and R. Also several interpreted and compiled Scheme implementations (Guile, MzScheme/Racket) are supported. SWIG is most commonly used to create high-level interpreted or compiled programming environments, user interfaces, and as a tool for testing and prototyping C/C++ software. SWIG is typically used to parse C/C++ interfaces and generate the 'glue code' required for the above target languages to call into the C/C++ code. SWIG can also export its parse tree in the form of XML. SWIG is free software and the code that SWIG generates is compatible with both commercial and non-commercial projects.
 
-SWIG是一种软件开发工具，用于将用C和C++编写的程序与多种高级编程语言连接起来。SWIG与不同类型的目标语言一起使用，包括常见的脚本语言，如Javascript、Perl、PHP、Python、Tcl和Ruby。支持的语言列表还包括非脚本语言，如C＃、D、Go语言、Java（包括Android）、Lua、OCaml、Octave、Scilab和R。此外，还支持几种解释型和编译型Scheme实现（Guile、MzScheme/Racket）。SWIG最常用于创建高级解释型或编译型编程环境、用户界面，并用作测试和原型开发C/C++软件的工具。SWIG通常用于解析C/C++接口并生成所需的“粘合代码”，以便上述目标语言能够调用C/C++代码。SWIG还可以将其解析树导出为XML格式。SWIG是自由软件，其生成的代码与商业项目和非商业项目均兼容。
-
 SWIG is an interface compiler that connects programs written in C and C++ with scripting languages such as Perl, Python, Ruby, and Tcl. It works by taking the declarations found in C/C++ header files and using them to generate the wrapper code that scripting languages need to access the underlying C/C++ code. In addition, SWIG provides a variety of customization features that let you tailor the wrapping process to suit your application.
-
-SWIG是一个接口编译器，用于将用C和C++编写的程序与诸如Perl、Python、Ruby和Tcl之类的脚本语言连接起来。它通过获取C/C++头文件中的声明，并使用这些声明来生成脚本语言需要访问底层C/C++代码的包装器代码来实现。此外，SWIG还提供了多种定制功能，使您可以根据需要调整包装过程，以适应您的应用程序。
 
 SWIG is used in a number of ways:
 
@@ -17,6 +13,22 @@ SWIG is used in a number of ways:
 - Rapid prototyping and debugging. SWIG allows C/C++ programs to be placed in a scripting environment that can be used for testing and debugging. For example, you might test a library with a collection of scripts or use the scripting interpreter as an interactive debugger. Since SWIG requires no modifications to the underlying C/C++ code, it can be used even if the final product does not rely upon scripting.
 - Systems integration. Scripting languages work fairly well for controlling and gluing loosely-coupled software components together. With SWIG, different C/C++ programs can be turned into scripting language extension modules. These modules can then be combined together to create new and interesting applications.
 - Construction of scripting language extension modules. SWIG can be used to turn common C/C++ libraries into components for use in popular scripting languages. Of course, you will still want to make sure that no-one else has already created a module before doing this.
+
+SWIG provides control over most aspects of wrapper generation. Most of these customization options are fully integrated into the C++ type system--making it easy to apply customizations across inheritance hierarchies, template instantiations, and more. Features include:
+Customized type conversion/marshaling.
+- Exception handling.
+- Class/structure extension.
+- Memory management.
+- Ambiguity resolution.
+- Template instantiation.
+- File import and cross-module linking.
+- Code inclusion, helper function support.
+- Extensive diagnostics (error/warning messages including fine grained warning suppression).
+- Extended SWIG macro handling.
+
+SWIG是一种软件开发工具，用于将用C和C++编写的程序与多种高级编程语言连接起来。SWIG与不同类型的目标语言一起使用，包括常见的脚本语言，如Javascript、Perl、PHP、Python、Tcl和Ruby。支持的语言列表还包括非脚本语言，如C＃、D、Go语言、Java（包括Android）、Lua、OCaml、Octave、Scilab和R。此外，还支持几种解释型和编译型Scheme实现（Guile、MzScheme/Racket）。SWIG最常用于创建高级解释型或编译型编程环境、用户界面，并用作测试和原型开发C/C++软件的工具。SWIG通常用于解析C/C++接口并生成所需的“粘合代码”，以便上述目标语言能够调用C/C++代码。SWIG还可以将其解析树导出为XML格式。SWIG是自由软件，其生成的代码与商业项目和非商业项目均兼容。
+
+SWIG是一个接口编译器，用于将用C和C++编写的程序与诸如Perl、Python、Ruby和Tcl之类的脚本语言连接起来。它通过获取C/C++头文件中的声明，并使用这些声明来生成脚本语言需要访问底层C/C++代码的包装器代码来实现。此外，SWIG还提供了多种定制功能，使您可以根据需要调整包装过程，以适应您的应用程序。
 
 SWIG的应用方式有多种：
 
@@ -43,17 +55,6 @@ SWIG有时会与诸如CORBA和COM等系统中的接口定义语言（IDL）编�
 
 自1996年2月以来，SWIG以各种形式免费提供，并且有大量开发人员进行了贡献。如今，SWIG仍然是一个全志愿的努力。大约有875人订阅了SWIG的邮件列表，并且在Github上有一个公共的Git仓库可供使用。现在，大多数Linux发行版中都可以找到SWIG的版本（不过，您几乎肯定会想在这里获取最新版本）。
 
-SWIG provides control over most aspects of wrapper generation. Most of these customization options are fully integrated into the C++ type system--making it easy to apply customizations across inheritance hierarchies, template instantiations, and more. Features include:
-Customized type conversion/marshaling.
-- Exception handling.
-- Class/structure extension.
-- Memory management.
-- Ambiguity resolution.
-- Template instantiation.
-- File import and cross-module linking.
-- Code inclusion, helper function support.
-- Extensive diagnostics (error/warning messages including fine grained warning suppression).
-- Extended SWIG macro handling.
 
 SWIG提供对大多数包装器生成方面的控制。这些定制选项大多完全集成到C++类型系统中，使得可以轻松地在继承层次结构、模板实例化等方面应用定制。其特点包括：
 - 自定义类型转换/封送。
